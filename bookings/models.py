@@ -15,7 +15,7 @@ class Booking(models.Model):
     guests = models.PositiveIntegerField()
 
     # email field
-    email = models.EmailField()
+    email = models.EmailField(default="default@example.com")
 
     # A method that defines how to show the booking information as a string
     def __str__(self):
