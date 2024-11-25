@@ -19,4 +19,4 @@ class Booking(models.Model):
 
     # A method that defines how to show the booking information as a string
     def __str__(self):
-        return f"Booking for {self.name} on {self.booking_date} at {self.booking_time}"
+        return f"Booking for {self.customer_name} on {self.booking_date} at {self.booking_time}"
