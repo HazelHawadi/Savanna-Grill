@@ -14,6 +14,8 @@ class MenuItem(models.Model):
     # Field to store an image of the menu item (its optional)
     image = models.ImageField(upload_to='menu_images/', blank=True, null=True) 
 
+    category = models.CharField(max_length=50, default='Main')  # e.g., Appetizer, Main Course, Dessert
+
     # to show the name of the menu item
     def __str__(self):
         return self.name  # returns the name of the menu item
