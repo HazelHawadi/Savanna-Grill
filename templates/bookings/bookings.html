@@ -5,9 +5,12 @@
 <section class="booking-section py-5">
     <div class="container-fluid">
         <h2 class="text-center">Book Your Table</h2>
+        <!-- Hero Image Section -->
         <div class="booking-image-container">
             <img src="{% static 'images/booking.jpg' %}" alt="Savanna Grill Logo" class="booking-image">
         </div>
+
+        <!-- Booking Form -->
         <form method="POST" class="needs-validation" novalidate>
             {% csrf_token %}
             <div class="form-row">
@@ -18,7 +21,7 @@
                 <div class="form-group col-md-6">
                     <label for="email">Email Address</label>
                     {{ form.email|add_class:"form-control" }}
-                </div> 
+                </div>
                 <div class="form-group col-md-6">
                     <label for="booking_date">Date</label>
                     {{ form.booking_date|add_class:"form-control" }}
