@@ -25,7 +25,18 @@ SECRET_KEY = 'django-insecure--f0i(ujji#u_-xfrmarvjdi@vvxq96j-l5n+&j!5m=h&a-c##l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io']
+ALLOWED_HOSTS = [ 
+    '127.0.0.1',
+    'localhost',
+    '8080-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io',
+    '8000-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io'
+]
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8080-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io',
+    'http://8080-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io',  # If you're testing with HTTP
+]
 
 
 # Application definition
@@ -116,16 +127,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Media files (Uploaded images, etc.)
+MEDIA_URL = '/media/'  # URL to access media files
+MEDIA_ROOT = BASE_DIR / 'media'  # Directory to store media files
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-
-# Media files (Uploaded images, etc.)
-MEDIA_URL = '/media/'  # URL to access media files
-MEDIA_ROOT = BASE_DIR / 'media'  # Directory to store media files
 
 
 # Default primary key field type
