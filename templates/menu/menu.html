@@ -1,28 +1,26 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }} Menu</title>
+</head>
+<body>
 
-{% block content %}
-<section class="menu-section py-5">
-    <div class="container">
-        <h2 class="text-center">Savanna Menu</h2>
-        <div class="row">
-            <!-- Loop through each menu item and display it in a card -->
-            {% for item in items %}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <!-- Display the menu item image if available -->
-                    {% if item.image %}
-                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h4 class="card-text">Category: {{ item.category }}</h5> <!-- Category of the food item -->
-                        <h5 class="card-title">{{ item.name }}</h5> <!-- Food item name -->
-                        <p class="card-text">{{ item.description }}</p> <!-- Description of the food item -->
-                        <p class="card-text"><strong>Price:</strong> €{{ item.price }}</p> <!-- Price of the food item -->
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-{% endblock %}
+    <!-- Heading for the category -->
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.description }}</p> <!-- Description of the category -->
+
+    <h2>Menu Items</h2>
+    <ul>
+        <!-- Loop through all items in this category -->
+        {% for item in category.menu_items.all %}
+            <li>
+                <!-- Display each item details like name, price, and description -->
+                <strong>{{ item.name }}</strong>: {{ item.description }} - €{{ item.price }}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
