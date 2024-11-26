@@ -5,14 +5,19 @@
     <div class="container">
         <h2 class="text-center">Savanna Menu</h2>
         <div class="row">
+            <!-- Loop through each menu item and display it in a card -->
             {% for item in items %}
             <div class="col-md-4 mb-4">
                 <div class="card">
+                    <!-- Display the menu item image if available -->
+                    {% if item.image %}
+                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                    {% endif %}
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.name }}</h5>
-                        <p class="card-text">{{ item.description }}</p>
-                        <p class="card-text"><strong>Price:</strong> ${{ item.price }}</p>
-                        <p class="card-text"><strong>Category:</strong> {{ item.category }}</p>
+                        <h5 class="card-title">{{ item.name }}</h5> <!-- Food item name -->
+                        <p class="card-text">{{ item.description }}</p> <!-- Description of the food item -->
+                        <p class="card-text"><strong>Price:</strong> ${{ item.price }}</p> <!-- Price of the food item -->
+                        <p class="card-text"><strong>Category:</strong> {{ item.category }}</p> <!-- Category of the food item -->
                     </div>
                 </div>
             </div>

@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 class MenuItem(models.Model):
+    # category choices for the menu items
+    CATEGORY_CHOICES = [
+        ('Appetizers', 'Appetizers'),
+        ('Main Course', 'Main Course'),
+        ('Desserts', 'Desserts'),
+        ('Beverages', 'Beverages'),
+    ]
+
     # Field to store the name of the menu item
     name = models.CharField(max_length=100) #limited to 100 characters
     
