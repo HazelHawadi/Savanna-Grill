@@ -19,9 +19,13 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('bookings/', include('bookings.urls')),
-    path('menu/', include('menu.urls')),
-    path('home/', views.home, name='home'),
-    path('', views.home, name='home'),
+    path('admin/', admin.site.urls),  # Admin interface
+    path('bookings/', include('bookings.urls')),  # Routes for the bookings app
+    path('menu/', include('menu.urls')),  # Routes for the menu app
+    path('home/', views.home, name='home'),  # Home page route
+    path('', views.home, name='home'),  # Default route to home page
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
