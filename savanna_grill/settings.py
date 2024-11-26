@@ -51,7 +51,14 @@ INSTALLED_APPS = [
     'bookings',
     'menu',
     'widget_tweaks',
+    'django.contrib.humanize',
 ]
+
+LANGUAGE_CODE = 'en-eu'  # English (Europe)
+USE_L10N = True  # Enable localization
+USE_TZ = True  # Enable timezone support
+
+CURRENCY_FORMAT = '€'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
