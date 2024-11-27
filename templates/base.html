@@ -37,6 +37,37 @@
         </nav>
     </header>
 
+    <!-- Main Content -->
+    <main>
+
+        <section class="about">
+            <h2>Welcome to Savanna Grill</h2>
+            <p>Savanna Grill brings you an unforgettable dining experience with a blend of rich flavors, excellent service, and a cozy atmosphere. Whether you're here for lunch or dinner, we have something for everyone.</p>
+            <img src="{% static 'images/design.jpg' %}" alt="Savanna Grill Interior">
+        </section>
+
+        <section class="hero">
+            <img src="{% static 'images/food-display.jpg' %}" alt="Savanna Grill" class="hero-image">
+            <div class="hero-text">
+                <h2></h2>
+                <p>Experience the finest flavors from the heart of Africa.</p>
+            </div>
+        </section>
+
+        <section class="menu-preview">
+            <h2>Our Menu</h2>
+            <p>Explore our mouthwatering dishes.</p>
+            <div class="category-cards">
+                {% for category in categories %}
+                    <div class="category-card">
+                        <img src="{% static 'images/{{ category.name|lower }}.jpg' %}" alt="{{ category.name }}">
+                        <h3>{{ category.name }}</h3>
+                        <a href="{% url 'category_view' category.id %}">Explore</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
     </nav>
 
     {% block content %}{% endblock %}
