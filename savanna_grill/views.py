@@ -11,6 +11,13 @@ def submit_review(request):
         review_text = request.POST.get('review')
         rating = request.POST.get('rating')  
 
+        # Save the review
+        Review.objects.create(
+            review=review_text,
+            rating=rating,
+            user=request.user if request.user.is_authenticated else None
+        )
+
         return redirect('home')
 
-return HttpResponse("Invalid request", status=400)
+    return HttpResponse("Invalid request", status=400)

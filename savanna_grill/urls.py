@@ -26,6 +26,7 @@ urlpatterns = [
     path('menu/', include('menu.urls')),  # Routes for the menu app
     path('home/', views.home, name='home'),  # Home page route
     path('', views.home, name='home'),  # Default route to home page
+    path('submit-review/', views.submit_review, name='submit_review'),  # Route for submitting reviews
 ]
 
 # Serve media files during development
