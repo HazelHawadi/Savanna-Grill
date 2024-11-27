@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'menu',
     'widget_tweaks',
     'django.contrib.humanize',
+    'savanna_grill',
 ]
 
 LANGUAGE_CODE = 'en-eu'  # English (Europe)
