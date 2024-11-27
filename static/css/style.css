@@ -3,16 +3,44 @@
 
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f7fa;
-    color: #333333; /* Dark text for readability */
+    font-family: 'Playfair', sans-serif;
+    background-image: url('/static/images/wallpaper1.jpg');  /* Set the background image */
+    background-size: cover;  /* Make sure the image covers the entire body */
+    background-position: center center;  /* Center the background image */
+    color: #f0f8ff; /* Dark text for readability */
     margin: 0;
     padding: 0;
 }
 
+/* Navigation bar styling */
 header {
-    background-color: #003366; /* Navy blue background */
-    color: #f0f8ff; /* Light blue text */
-    text-align: center;
+    background-color: #001b36; /* Deep navy blue background */
     padding: 20px 0;
+}
+
+header .logo h1 {
+    color: #fff;  
+    text-align: center;
+    letter-spacing: 9px;
+    font-size: 4rem;  
+}
+
+header nav {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+header nav a {
+    color: #a1c6ea;  /* Light blue color for links */
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    color: #fff;  
 }
