@@ -1,0 +1,8 @@
+<h2>Reviews</h2>
+{% for review in reviews %}
+    <div>
+        <p><strong>{{ review.user }}</strong> rated {{ review.rating }} stars</p>
+        <p>{{ review.review }}</p>
+        <p><em>{{ review.created_at }}</em></p>
+    </div>
+{% endfor %}
