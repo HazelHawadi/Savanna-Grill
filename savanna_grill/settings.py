@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8080-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io',
-    'http://8080-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io',  # If you're testing with HTTP
+    'http://8080-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io', 
+    'https://8000-hazelhawadi-savannagril-xnvus1qz5tp.ws-eu116.gitpod.io',
 ]
 
 
