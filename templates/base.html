@@ -101,10 +101,30 @@
         </section>
     </main>
 
-    {% block content %}{% endblock %}
-
+    <!-- Footer -->
     <footer>
-
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@savannagrill.com</p>
+                <p>Phone: +353 456 7890</p>
+                <p>Address: 542 Savanna St, tralee, Ireland</p>
+            </div>
+            <div class="footer-subscribe">
+                <h4>Stay Updated</h4>
+                <form action="/subscribe" method="POST">
+                    {% csrf_token %}
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Savanna Grill. All rights reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
