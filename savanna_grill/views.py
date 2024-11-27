@@ -20,4 +20,9 @@ def submit_review(request):
 
         return redirect('home')
 
-    return HttpResponse("Invalid request", status=400)
+    return render(request, 'submit_review.html')  # Render the form on GET request
+
+# View all reviews
+def view_reviews(request):
+    reviews = Review.objects.all()  # Fetch all reviews
+    return render(request, 'view_reviews.html', {'reviews': reviews})    
