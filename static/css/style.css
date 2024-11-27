@@ -10,3 +10,9 @@ body {
     padding: 0;
 }
 
+header {
+    background-color: #003366; /* Navy blue background */
+    color: #f0f8ff; /* Light blue text */
+    text-align: center;
+    padding: 20px 0;
+}
