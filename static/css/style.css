@@ -23,6 +23,7 @@ header .logo h1 {
     text-align: center;
     letter-spacing: 9px;
     font-size: 4rem;  
+    margin: 0;
 }
 
 header nav {
@@ -30,6 +31,7 @@ header nav {
     justify-content: flex-end; 
     align-items: center; 
     gap: 15px; 
+    padding: 10px 20px;
 }
 
 header nav a {
@@ -38,9 +40,100 @@ header nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
     text-decoration: underline;
     color: #fff;  
+}
+
+/* Hero section with large image */
+.hero {
+    display: flex; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.hero .hero-text {
+    flex: 1;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px;
+    text-align: left; 
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 8px;
+    max-width: 500px; /* Restrict text width */
+}
+
+.hero img {
+    flex: 1;
+    max-width: 70%; /* Cover half the width */
+    max-height: 70vh; /* Cover half the viewport height */
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*  shadow for better appearance */
+}
+
+/* About section styling */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between text and image */
+    margin-top: 40px;
+}
+
+.about p {
+    flex: 1; 
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px; 
+    border-radius: 8px;
+    max-width: 500px; 
+    text-align: left; 
+}
+
+.about img {
+    flex: 1;
+    max-width: 70%; 
+    max-height: 70vh; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu preview section */
+.menu-preview {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.menu-preview h2 {
+    color: #84bef7; /* Navy color for headings */
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.menu-preview p {
+    color: #445363;
+    font-size: 1.3rem;
+}
+
+.category-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
