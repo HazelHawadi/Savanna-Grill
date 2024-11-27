@@ -68,7 +68,38 @@
             </div>
         </section>
 
-    </nav>
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review-form">
+                <h3>Leave a Review</h3>
+                <form action="{% url 'submit_review' %}" method="POST">
+                    {% csrf_token %}
+                    <label for="review">Your Review:</label>
+                    <textarea name="review" id="review" rows="5" required></textarea>
+                    <label for="rating">Rating:</label>
+                    <select name="rating" id="rating" required>
+                        <option value="1">1 Star</option>
+                        <option value="2">2 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="5">5 Stars</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="review-list">
+                <h3>What Our Guests Say</h3>
+                {% for review in reviews %}
+                    <div class="review-item">
+                        <p>"{{ review.text }}"</p>
+                        <p>- {{ review.user_name }} ({{ review.rating }} Stars)</p>
+                    </div>
+                {% empty %}
+                    <p>No reviews yet. Be the first to leave a review!</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
 
     {% block content %}{% endblock %}
 
