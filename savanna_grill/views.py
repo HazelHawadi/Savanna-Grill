@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from menu.models import Category, MenuItem  # Import from the menu app
+from .models import Review 
 
 def home(request):
     categories = Category.objects.all()  # Fetch all categories from the database
