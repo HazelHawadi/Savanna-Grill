@@ -16,6 +16,8 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+        
+# Creates the MenuItem model        
 class MenuItem(models.Model):
     # Field to store the name of the menu item
     name = models.CharField(max_length=100) #limited to 100 characters
@@ -25,9 +27,8 @@ class MenuItem(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)  # (e.g., 12.99)
     # Field to store an image of the menu item (its optional)
     image = models.ImageField(upload_to='menu_images/', blank=True, null=True) 
-
     category = models.ForeignKey(Category, related_name='menu_items', on_delete=models.CASCADE)
-    # to show the name of the menu item
     
+    # to show the name of the menu item
     def __str__(self):
         return self.name  # returns the name of the menu item

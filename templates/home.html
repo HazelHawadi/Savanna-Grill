@@ -34,6 +34,20 @@
     </div>
 </section>
 
+<section class="menu-preview">
+    <h2>Our Menu</h2>
+    <p>Explore our mouthwatering dishes.</p>
+    <div class="category-cards">
+        {% for category in categories %}
+        <div class="category-card">
+            <img src="{% static 'images/{{ category.name|lower|replace:' ', '-' }}.jpg' %}" alt="{{ category.name }}" class="img-fluid">
+            <h3>{{ category.name }}</h3>
+            <a href="{% url 'category_view' category.id %}">Explore</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
 <section class="about-us py-5">
     <div class="container">
         <h2 class="text-center">Why Roll Us?</h2>

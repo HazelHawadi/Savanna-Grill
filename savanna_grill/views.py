@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Review  
+from menu.models import Category, MenuItem  # Import from the menu app
 
 def home(request):
-    return render(request, 'home.html')
+    categories = Category.objects.all()  # Fetch all categories from the database
+    return render(request, 'home.html', {'categories': categories})  # Pass categories to the template
 
 # Submit review view
 def submit_review(request):

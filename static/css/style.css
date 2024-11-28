@@ -81,7 +81,6 @@ header nav a:hover {
     display: flex;
     align-items: center;
     gap: 20px; /* Space between text and image */
-    margin-top: 40px;
 }
 
 .about p {
@@ -122,18 +121,51 @@ header nav a:hover {
 }
 
 .category-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Spacing between items */
+    padding: 20px; /* Add padding around the grid */
 }
 
 .category-card {
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    width: 250px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    color: #001b36; /* Navy text */
+}
+
+.category-card a {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #001b36; /* Navy blue button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.category-card a:hover {
+    background-color: #84bef7; /* Light blue on hover */
+}
+
+.category-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
