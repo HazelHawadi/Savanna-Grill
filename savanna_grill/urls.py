@@ -22,6 +22,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin interface
+    path('accounts/', include('django.contrib.auth.urls')), 
     path('bookings/', include('bookings.urls')),  # Routes for the bookings app
     path('menu/', include('menu.urls')),  # Routes for the menu app
     path('home/', views.home, name='home'),  # Home page route
