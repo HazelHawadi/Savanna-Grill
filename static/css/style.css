@@ -116,56 +116,52 @@ header nav a:hover {
 }
 
 .menu-preview p {
-    color: #445363;
-    font-size: 1.3rem;
+    color: #c5ddf7;
+    font-size: 1.7rem;
 }
 
 .category-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Spacing between items */
-    padding: 20px; /* Add padding around the grid */
+    display: flex;
+    justify-content: space-around; /* Distribute the cards evenly */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if necessary */
+    gap: 15px; /* Add space between cards */
 }
 
 .category-card {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Ensure all cards have equal width */
+    min-width: 220px; 
+    max-width: 250px; 
+    margin: 10px 0; /* Add margin between cards */
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .category-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    width: 100%; /* Make image take full width of the card */
+    height: 200px; 
+    object-fit: cover; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
+/* Title for the category card */
 .category-card h3 {
-    margin: 15px 0;
-    font-size: 1.5rem;
-    color: #001b36; /* Navy text */
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
+/* Explore link button */
 .category-card a {
     display: inline-block;
-    margin: 10px 0;
-    padding: 10px 15px;
-    background-color: #001b36; /* Navy blue button */
-    color: #fff;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 .category-card a:hover {
-    background-color: #84bef7; /* Light blue on hover */
-}
-
-.category-card:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
 }

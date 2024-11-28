@@ -70,7 +70,7 @@
             <div class="category-cards">
                 {% for category in categories %}
                 <div class="category-card">
-                    <img src="{% static 'images/{{ category.name|lower }}.jpg' %}" alt="{{ category.name }}">
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
                     <h3>{{ category.name }}</h3>
                     <a href="{% url 'category_view' category.id %}">Explore</a>
                 </div>
